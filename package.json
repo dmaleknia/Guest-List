@@ -4,7 +4,9 @@
   "description": "Full stack guest list application built with MVP design principles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app-guest-list/server/index.js",
+    "react-dev": "webpack -d --watch",
+    "db-dev": "node app-guest-list/database/database.js"
   },
   "repository": {
     "type": "git",
