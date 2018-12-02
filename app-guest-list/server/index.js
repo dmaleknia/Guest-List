@@ -10,8 +10,8 @@ const app = express();
 const port = 710;
 
 const environment = process.env.NODE_ENV || 'development';
-const configuration = require(__dirname + '/../../knexfile.js')[environment];
-const database = require('knex')(configuration);
+// const configuration = require(__dirname + '/../../knexfile.js')[environment];
+// const database = require('knex')(configuration);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -23,6 +23,6 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-app.listen(process.env.PORT, () => console.log(`App listening on port ${port}!`));
+app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`));
 
 module.exports = app;
