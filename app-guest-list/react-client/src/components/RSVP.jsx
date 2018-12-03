@@ -1,6 +1,6 @@
 const React = require('react');
 
-const RSVP = (props) => {
+const RSVP = () => {
   return (
     <span>
       <h2>RSVP </h2>

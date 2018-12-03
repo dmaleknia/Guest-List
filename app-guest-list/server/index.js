@@ -25,11 +25,9 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`));
 
 app.get('/events', (req, res) => {
-  res.send('GET request to the events route')
-
   knex('events').select()
     .then((events) => {
-      res.status(200).json(products);
+      res.status(200).json(events);
     })
     .catch((error) => {
       res.status(500).json({

@@ -1,5 +1,5 @@
 const React = require('react');
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import NavBar from './NavBar.jsx';
 import Admin from './Admin.jsx';
@@ -9,12 +9,6 @@ import RSVP from './RSVP.jsx';
 const App = () => {
 
   const [view, setView] = useState('homepage');
-
-  useEffect(() => {
-    // this function is called after render
-    console.log('useEffect called from App!');
-  });
-
 
   const renderView = () => {
     if (view === 'admin') {
