@@ -1,7 +1,6 @@
 const React = require('react');
 
 const NavBar = (props) => {
-  console.log(props);
 
   const setView = props.setView;
 
