@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
+const App = (props) => {
+
+  const [view, setView] = useState('menu');
+
+  useEffect(() => {
+    // this function is called after render
+  });
+
   render() {
     return (
       <div></div>
