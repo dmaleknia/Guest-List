@@ -1,18 +1,29 @@
-import { useState } from 'react';
+const React = require('react');
+import { useState, useEffect } from 'react';
 
 const App = (props) => {
 
-  const [view, setView] = useState('menu');
+  const [view, setView] = useState();
 
   useEffect(() => {
     // this function is called after render
   });
 
-  render() {
-    return (
-      <div></div>
-    );
+  const renderView = () => {
+    if (view === "menu") {
+      return (
+        <span>menu</span>
+      );
+    } else {
+      return (
+        <span>homepage</span>
+      );
+    }
   }
+
+  return(
+    renderView()
+  );
 }
 
 export default App;
