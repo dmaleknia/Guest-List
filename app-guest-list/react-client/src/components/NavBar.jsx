@@ -17,7 +17,7 @@ const NavBar = (props) => {
         </span>
         <span className={'admin'}
           onClick={() => setView('admin')}>
-          Admin
+          Add Event
         </span>
       </div>
     </div>
