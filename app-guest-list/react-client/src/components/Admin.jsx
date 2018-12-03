@@ -1,5 +1,6 @@
 const React = require('react');
 import { useState } from 'react';
+import axios from 'axios';
 
 const Admin = () => {
 
@@ -30,7 +31,19 @@ const Admin = () => {
   }
 
   const submitEvent = () => {
-    console.log(`name: ${name} location: ${location} date: ${date} startTime: ${startTime} endTime: ${endTime}`)
+    axios.post('/events', {
+      name: name,
+      location: location,
+      date: date,
+      startTime: startTime,
+      endTime: endTime
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return(

@@ -25,4 +25,9 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`));
 
+app.post('/events', (req, res) => {
+  res.send('POST request to the events route')
+  console.log(req.body);
+})
+
 module.exports = app;
