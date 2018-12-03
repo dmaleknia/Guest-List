@@ -7,6 +7,7 @@ const App = (props) => {
 
   useEffect(() => {
     // this function is called after render
+    console.log('useEffect called!');
   });
 
   const renderView = () => {
