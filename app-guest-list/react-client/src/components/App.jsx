@@ -2,6 +2,9 @@ const React = require('react');
 import { useState, useEffect } from 'react';
 
 import NavBar from './NavBar.jsx';
+import Admin from './Admin.jsx';
+import HomePage from './HomePage.jsx';
+import RSVP from './RSVP.jsx';
 
 const App = (props) => {
 
@@ -9,7 +12,7 @@ const App = (props) => {
 
   useEffect(() => {
     // this function is called after render
-    console.log('useEffect called!');
+    console.log('useEffect called from App!');
   });
 
 
@@ -18,21 +21,21 @@ const App = (props) => {
       return (
         <span>
           <NavBar setView={setView} />
-          <span>admin</span>
+          <Admin />
         </span>
       );
     } else if (view === 'rsvp') {
       return (
         <span>
           <NavBar setView={setView} />
-          <span>rsvp</span>
+          <RSVP />
         </span>
       );
     } else {
       return (
         <span>
           <NavBar setView={setView} />
-          <span>homepage</span>
+          <HomePage />
         </span>
       );
     }
