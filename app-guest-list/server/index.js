@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const moment = require('moment');
 
 const app = express();
 const port = 711;
@@ -39,6 +40,23 @@ app.get('/events', (req, res) => {
 
 app.post('/events', (req, res) => {
   res.send('POST request to the events route')
+  console.log(req.body);
+  knex('events')
+    .insert({
+      name: req.body.name,
+      location: req.body.location,
+      date: req.body.date,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime,
+      created_at: moment().format('LLLL'),
+      updated_at: moment().format('LLLL')
+    })
+    .then(() => {
+      console.log('inserted new event')
+    })
+    .catch((error) => {
+      console.error(error);
+    })
 
 })
 
