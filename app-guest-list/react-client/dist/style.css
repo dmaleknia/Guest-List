@@ -131,11 +131,16 @@ table {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(to right, #2E6D7F, #5CD9FF);
 }
 
 .nav * {
-  color: blue;
+  color: #ffffff;
   padding: 30px;
   margin: 20px;
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.nav {
+  margin: 10px;
 }
