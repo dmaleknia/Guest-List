@@ -1,11 +1,5 @@
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() {
-    return (  );
-  }
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-export default Index;
+ReactDOM.render(<App />, document.getElementById('app'));
