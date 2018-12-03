@@ -144,3 +144,8 @@ body {
 .nav {
   margin: 10px;
 }
+
+#admin {
+  display: flex;
+  flex-direction: column;
+}

@@ -6,7 +6,7 @@ import Admin from './Admin.jsx';
 import HomePage from './HomePage.jsx';
 import RSVP from './RSVP.jsx';
 
-const App = (props) => {
+const App = () => {
 
   const [view, setView] = useState('homepage');
 
