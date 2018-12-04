@@ -9,12 +9,28 @@ const RSVP = (props) => {
   const [email, setEmail] = useState();
   const [guests, setGuests] = useState();
 
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  }
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  }
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+
+  // const handleGuestsChange = (event) => {
+  //   setGuests(event.target.value);
+  // }
+
   return (
     <span>
       RSVP to: {props.eventName}<br />
-      First Name: <input value={firstName} onChange={setFirstName}></input><br />
-      Last Name: <input value={lastName} onChange={setLastName}></input><br />
-      Email: <input value={email} onChange={setEmail}></input><br />
+      First Name: <input value={firstName} onChange={handleFirstNameChange}></input><br />
+      Last Name: <input value={lastName} onChange={handleLastNameChange}></input><br />
+      Email: <input value={email} onChange={handleEmailChange}></input><br />
       Guests: <NumericInput min={0} max={4} value={guests} onChange={setGuests} />
     </span>
   );
