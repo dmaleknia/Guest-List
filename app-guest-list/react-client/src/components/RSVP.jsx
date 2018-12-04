@@ -4,12 +4,13 @@ import { useState } from 'react';
 const RSVP = (props) => {
 
   const [name, setName] = useState();
-
+  const [email, setEmail] = useState();
 
   return (
     <span>
-      <div>RSVP to: {props.eventName}</div>
-      Name <input value={name} onChange={setName}></input>
+      RSVP to: {props.eventName}<br />
+      Name <input value={name} onChange={setName}></input><br />
+      Email <input value={email} onChange={setEmail}></input>
     </span>
   );
 }
