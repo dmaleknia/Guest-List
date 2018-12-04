@@ -54,8 +54,9 @@ const Admin = () => {
       <section id='admin'>
         Event Name <input value={name} onChange={handleNameChange}></input>
         Location <input value={location} onChange={handleLocationChange}></input>
-        Date <DatePicker selected={date} onChange={setDate} />
+        Date <DatePicker placeholderText="Click to select a date" todayButton={"Today"} selected={date} onChange={setDate} />
         Start Time<DatePicker
+          placeholderText="Click to select a time"
           selected={startTime}
           onChange={setStartTime}
           showTimeSelect
@@ -65,6 +66,7 @@ const Admin = () => {
           timeCaption="Time"
         />
         End Time<DatePicker
+          placeholderText="Click to select a time"
           selected={endTime}
           onChange={setEndTime}
           showTimeSelect
