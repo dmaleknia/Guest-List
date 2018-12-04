@@ -19,6 +19,10 @@ const HomePage = () => {
       })
   }, []);
 
+  const handleEventClick = (id) => {
+    console.log(this);
+  }
+
   const renderEvents = () => {
     if (events.length === 0) {
       return (
@@ -29,14 +33,16 @@ const HomePage = () => {
       return (
         <div className='events'>
           {events.map((event) => (
-            <Event
-              key={event.id}
-              name={event.name}
-              location={event.location}
-              date={moment(event.date).format('L')}
-              startTime={moment(event.startTime).format('LT')}
-              endTime={moment(event.endTime).format('LT')}
-            />
+            <a key={event.id} onClick={handleEventClick(event.id)}>
+              <Event
+                key={event.id}
+                name={event.name}
+                location={event.location}
+                date={moment(event.date).format('L')}
+                startTime={moment(event.startTime).format('LT')}
+                endTime={moment(event.endTime).format('LT')}
+              />
+            </a>
           ))}
         </div>
       );

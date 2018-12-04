@@ -45,7 +45,8 @@ app.post('/events', (req, res) => {
       created_at: moment().format('LLLL'),
       updated_at: moment().format('LLLL')
     })
-    .then(() => {
+    .then((data) => {
+      console.log(data);
       res.status(200);
     })
     .catch((error) => {
@@ -54,7 +55,7 @@ app.post('/events', (req, res) => {
 })
 
 app.post('/rsvps', (req, res) => {
-    console.log(req);
+    // console.log(req);
       // knex('events')
       //   .insert({
       //     name: req.body.name,
