@@ -44,6 +44,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <h1 id='eventsHeader'>Top Events</h1>
       {renderEvents()}
     </div>
   );

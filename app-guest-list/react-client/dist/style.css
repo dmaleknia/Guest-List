@@ -135,7 +135,7 @@ body {
 }
 
 .nav * {
-  color: #ffffff;
+  color: whitesmoke;
   padding: 30px;
   margin: 20px;
   font-size: 22px;
@@ -148,6 +148,11 @@ body {
 #admin {
   display: flex;
   flex-direction: column;
+  margin: 10px;
+}
+
+#admin * {
+  margin-bottom: 10px;
 }
 
 .event {
@@ -155,4 +160,17 @@ body {
   flex-direction: column;
   margin-top: 20px;
   margin-left: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #5CD9FF;
+  text-decoration: underline whitesmoke;
+  margin: 15px;
+}
+
+#submitEvent {
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }

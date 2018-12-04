@@ -48,7 +48,7 @@ const Admin = () => {
 
   return(
     <span>
-      <h2>Add an Event: </h2>
+      <h1>Add an Event </h1>
       <section id='admin'>
         Event Name <input value={name} onChange={handleNameChange}></input>
         Location <input value={location} onChange={handleLocationChange}></input>
@@ -56,7 +56,7 @@ const Admin = () => {
         Start Time<input value={startTime} onChange={handleStartTimeChange}></input>
         End Time<input value={endTime} onChange={handleEndTimeChange}></input>
       </section>
-      <button onClick={submitEvent}>Submit Event</button>
+      <button id='submitEvent' onClick={submitEvent}>Submit Event</button>
     </span>
   );
 }
