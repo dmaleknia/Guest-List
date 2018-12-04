@@ -12,36 +12,31 @@ const HomePage = () => {
     console.log('useEffect called from HomePage!');
     axios.get('/events')
       .then((response) => {
-        const data = response.data;
-        console.log(response.data);
-        setEvents(data);
-        console.log(`Events after axios: ${events}`);
+        setEvents(response.data);
       })
       .catch((error) => {
         console.log(error);
-      });
+      })
   }, []);
 
   const renderEvents = () => {
-    console.log(`Number of events: ${events.length}`);
-    console.log(`events: ${JSON.stringify(events)}`);
     if (events.length === 0) {
       return (
-        <div></div>
+        <div className='events'></div>
       );
     } else {
       return (
-        <div>
-          {events.map((event, index) => {
+        <div className='events'>
+          {events.map((event, index) => (
             <Event
-              id={index}
+              key={index}
               name={event.name}
               location={event.location}
               date={event.date}
               startTime={event.startTime}
               endTime={event.endTime}
             />
-          })}
+          ))}
         </div>
       );
     }
