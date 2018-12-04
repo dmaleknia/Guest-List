@@ -19,8 +19,8 @@ const HomePage = () => {
       })
   }, []);
 
-  const handleEventClick = (id) => {
-    console.log(`event ${id} clicked on`);
+  const handleEventClick = (id, name) => {
+    console.log(`event id: ${id} ${name}`);
   }
 
   const renderEvents = () => {
@@ -33,9 +33,8 @@ const HomePage = () => {
       return (
         <div className='events'>
           {events.map((event) => (
-            <a key={event.id} onClick={() => { handleEventClick(event.id) }}>
+            <a key={event.id} onClick={() => { handleEventClick(event.id, event.name) }}>
               <Event
-                key={event.id}
                 name={event.name}
                 location={event.location}
                 date={moment(event.date).format('L')}
