@@ -8,7 +8,7 @@ const Admin = () => {
 
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
 
@@ -54,9 +54,25 @@ const Admin = () => {
       <section id='admin'>
         Event Name <input value={name} onChange={handleNameChange}></input>
         Location <input value={location} onChange={handleLocationChange}></input>
-        Date <input value={date} onChange={handleDateChange}></input>
-        Start Time<input value={startTime} onChange={handleStartTimeChange}></input>
-        End Time<input value={endTime} onChange={handleEndTimeChange}></input>
+        Date <DatePicker selected={date} onChange={setDate} />
+        Start Time<DatePicker
+          selected={startTime}
+          onChange={setStartTime}
+          showTimeSelect
+          showTimeSelectOnly
+          timeIntervals={15}
+          dateFormat="h:mm aa"
+          timeCaption="Time"
+        />
+        End Time<DatePicker
+          selected={endTime}
+          onChange={setEndTime}
+          showTimeSelect
+          showTimeSelectOnly
+          timeIntervals={15}
+          dateFormat="h:mm aa"
+          timeCaption="Time"
+        />
       </section>
       <button id='submitEvent' onClick={submitEvent}>Submit Event</button>
     </span>
