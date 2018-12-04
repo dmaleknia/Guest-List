@@ -20,6 +20,12 @@ const Admin = () => {
     setLocation(event.target.value);
   }
 
+  const addDays = (date, days) => {
+    let result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
   const submitEvent = () => {
     axios.post('/events', {
       name: name,
@@ -42,11 +48,20 @@ const Admin = () => {
       <section id='admin'>
         Event Name <input value={name} onChange={handleNameChange}></input>
         Location <input value={location} onChange={handleLocationChange}></input>
-        Date <DatePicker placeholderText="Click to select a date" todayButton={"Today"} selected={date} onChange={setDate} />
+        Date <DatePicker
+          placeholderText="Click to select a date"
+          todayButton={"Today"}
+          selected={date}
+          onChange={setDate}
+          minDate={new Date()}
+          maxDate={addDays(new Date(), 365)}
+        />
         Start Time<DatePicker
           placeholderText="Click to select a time"
           selected={startTime}
           onChange={setStartTime}
+          minDate={new Date()}
+          maxDate={addDays(new Date(), 365)}
           showTimeSelect
           showTimeSelectOnly
           timeIntervals={15}
@@ -57,6 +72,8 @@ const Admin = () => {
           placeholderText="Click to select a time"
           selected={endTime}
           onChange={setEndTime}
+          minDate={new Date()}
+          maxDate={addDays(new Date(), 365)}
           showTimeSelect
           showTimeSelectOnly
           timeIntervals={15}
