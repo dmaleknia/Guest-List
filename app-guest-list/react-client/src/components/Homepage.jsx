@@ -25,11 +25,12 @@ const HomePage = () => {
         <div className='events'></div>
       );
     } else {
+      console.log(events);
       return (
         <div className='events'>
-          {events.map((event, index) => (
+          {events.map((event) => (
             <Event
-              key={index}
+              key={event.id}
               name={event.name}
               location={event.location}
               date={moment(event.date).format('L')}
