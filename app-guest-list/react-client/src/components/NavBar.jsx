@@ -9,7 +9,7 @@ const NavBar = (props) => {
       <div className='nav'>
         <span className={'homepage'}
           onClick={() => setView('homepage')}>
-          Homepage
+          Home
         </span>
         <span className={'rsvp'}
           onClick={() => setView('rsvp')}>
