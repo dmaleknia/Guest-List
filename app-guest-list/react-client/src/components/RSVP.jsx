@@ -4,9 +4,9 @@ import NumericInput from 'react-numeric-input';
 
 const RSVP = (props) => {
 
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [email, setEmail] = useState();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [guests, setGuests] = useState();
 
   const handleFirstNameChange = (event) => {
@@ -20,10 +20,6 @@ const RSVP = (props) => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   }
-
-  // const handleGuestsChange = (event) => {
-  //   setGuests(event.target.value);
-  // }
 
   return (
     <span>
