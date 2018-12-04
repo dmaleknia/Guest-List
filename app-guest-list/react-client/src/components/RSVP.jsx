@@ -1,9 +1,15 @@
 import React from 'react';
+import { useState } from 'react';
 
-const RSVP = () => {
+const RSVP = (props) => {
+
+  const [name, setName] = useState();
+
+
   return (
     <span>
-      <h1>RSVP </h1>
+      <div>RSVP to: {props.eventName}</div>
+      Name <input value={name} onChange={setName}></input>
     </span>
   );
 }
