@@ -9,7 +9,6 @@ const HomePage = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    console.log('useEffect called from HomePage!');
     axios.get('/events')
       .then((response) => {
         setEvents(response.data);

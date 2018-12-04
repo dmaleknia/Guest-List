@@ -37,8 +37,6 @@ app.get('/events', (req, res) => {
 })
 
 app.post('/events', (req, res) => {
-  res.send('POST request to the events route')
-  console.log(req.body);
   knex('events')
     .insert({
       name: req.body.name,
@@ -50,10 +48,12 @@ app.post('/events', (req, res) => {
       updated_at: moment().format('LLLL')
     })
     .then(() => {
-      console.log('inserted new event')
+      res.status(200);
     })
     .catch((error) => {
-      console.error(error);
+      res.status(500).json({
+        error
+      });
     })
 
 })
