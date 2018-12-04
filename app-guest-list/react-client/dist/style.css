@@ -134,6 +134,11 @@ body {
   background-image: linear-gradient(to right, #2E6D7F, #5CD9FF);
 }
 
+.nav {
+  justify-content: center;
+  margin: 10px;
+}
+
 .nav * {
   color: whitesmoke;
   padding: 30px;
@@ -141,8 +146,9 @@ body {
   font-size: 22px;
 }
 
-.nav {
-  margin: 10px;
+.nav *:hover {
+  color: yellow;
+  text-decoration: underline whitesmoke;
 }
 
 #admin {
@@ -165,7 +171,6 @@ body {
 h1 {
   font-size: 30px;
   color: #5CD9FF;
-  text-decoration: underline whitesmoke;
   margin: 15px;
 }
 
