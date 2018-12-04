@@ -132,6 +132,7 @@ table {
 body {
   font-family: 'Roboto', sans-serif;
   background-image: linear-gradient(to right, #2E6D7F, #5CD9FF);
+  color: whitesmoke;
 }
 
 .nav {
