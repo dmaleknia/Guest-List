@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import DatePicker from 'react-datepicker';
 
@@ -8,9 +9,9 @@ const Admin = () => {
 
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
-  const [date, setDate] = useState();
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
+  const [date, setDate] = useState(new Date);
+  const [startTime, setStartTime] = useState(new Date);
+  const [endTime, setEndTime] = useState(new Date);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -18,18 +19,6 @@ const Admin = () => {
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
-  }
-
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
-  }
-
-  const handleStartTimeChange = (event) => {
-    setStartTime(event.target.value);
-  }
-
-  const handleEndTimeChange = (event) => {
-    setEndTime(event.target.value);
   }
 
   const submitEvent = () => {
