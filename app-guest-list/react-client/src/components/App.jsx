@@ -15,7 +15,7 @@ const App = () => {
       return (
         <span>
           <NavBar setView={setView} />
-          <Admin />
+          <Admin setView={setView} />
         </span>
       );
     } else if (view === 'rsvp') {
