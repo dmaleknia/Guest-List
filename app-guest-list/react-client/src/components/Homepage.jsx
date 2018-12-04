@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import Event from './Event.jsx';
 
@@ -31,9 +32,9 @@ const HomePage = () => {
               key={index}
               name={event.name}
               location={event.location}
-              date={event.date}
-              startTime={event.startTime}
-              endTime={event.endTime}
+              date={moment(event.date).format('L')}
+              startTime={moment(event.startTime).format('LT')}
+              endTime={moment(event.endTime).format('LT')}
             />
           ))}
         </div>
