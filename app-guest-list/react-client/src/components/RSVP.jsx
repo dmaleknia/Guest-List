@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import NumericInput from 'react-numeric-input';
 
+import axios from 'axios';
+
 const RSVP = (props) => {
 
   const [firstName, setFirstName] = useState('');
@@ -29,7 +31,7 @@ const RSVP = (props) => {
       lastName: lastName,
       email: email,
       guests: guests,
-      eventID: eventID
+      // eventID: eventID
     })
       .then((response) => {
         console.log(response);
