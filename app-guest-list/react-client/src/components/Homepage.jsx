@@ -12,9 +12,10 @@ const HomePage = () => {
     console.log('useEffect called from HomePage!');
     axios.get('/events')
       .then((response) => {
+        const data = response.data;
         console.log(response.data);
-        setEvents(response.data);
-        console.log(events);
+        setEvents(data);
+        console.log(`Events after axios: ${events}`);
       })
       .catch((error) => {
         console.log(error);
