@@ -51,7 +51,28 @@ app.post('/events', (req, res) => {
     .catch((error) => {
       res.status(500).json({ error });
     })
+})
 
+app.post('/rsvps', (req, res) => {
+    console.log(req);
+      // knex('events')
+      //   .insert({
+      //     name: req.body.name,
+      //     location: req.body.location,
+      //     date: req.body.date,
+      //     startTime: req.body.startTime,
+      //     endTime: req.body.endTime,
+      //     created_at: moment().format('LLLL'),
+      //     updated_at: moment().format('LLLL')
+      //   })
+      //   .then(() => {
+      //     res.status(200);
+      //   })
+      //   .catch((error) => {
+      //     res.status(500).json({
+      //       error
+      //     });
+      //   })
 })
 
 module.exports = app;
