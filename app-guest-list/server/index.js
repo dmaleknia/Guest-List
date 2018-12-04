@@ -45,8 +45,20 @@ app.post('/events', (req, res) => {
       created_at: moment().format('LLLL'),
       updated_at: moment().format('LLLL')
     })
-    .then((data) => {
-      console.log(data);
+    .then(() => {
+      knex('events').where({
+        name: req.body.name,
+        location: req.body.location,
+        date: req.body.date,
+        startTime: req.body.startTime,
+        endTime: req.body.endTime
+      }).select('id')
+      .then((data) => {
+        const id = data[0].id;
+        console.log(`inserted id was ${JSON.stringify(id)}`);
+      })
+    })
+    .then(() => {
       res.status(200);
     })
     .catch((error) => {
