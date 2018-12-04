@@ -29,7 +29,6 @@ const HomePage = () => {
         <div className='events'></div>
       );
     } else {
-      console.log(events);
       return (
         <div className='events'>
           {events.map((event) => (
