@@ -26,7 +26,6 @@ const RSVP = (props) => {
   }
 
   const submitRSVP = () => {
-    console.log(firstName, lastName, email, guests);
     axios.post('/rsvps', {
       firstName: firstName,
       lastName: lastName,
