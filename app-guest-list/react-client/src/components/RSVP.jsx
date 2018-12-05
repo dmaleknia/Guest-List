@@ -53,7 +53,7 @@ const RSVP = (props) => {
     } else {
       return (
         <span>
-          RSVP to: {props.eventName}<br />
+          <h1 id='eventHeader'>RSVP to: {props.eventName}</h1><br />
           First Name: <input value={firstName} onChange={handleFirstNameChange}></input><br />
           Last Name: <input value={lastName} onChange={handleLastNameChange}></input><br />
           Email: <input value={email} onChange={handleEmailChange}></input><br />
