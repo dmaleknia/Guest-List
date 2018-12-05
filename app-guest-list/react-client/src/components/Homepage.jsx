@@ -3,11 +3,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
+import RSVP from './RSVP.jsx';
 import Event from './Event.jsx';
 
 const HomePage = () => {
 
   const [events, setEvents] = useState([]);
+  const [view, setView] = useState('feed');
+  const [focalEvent, setFocalEvent] = useState();
 
   useEffect(() => {
     axios.get('/events')
@@ -20,7 +23,8 @@ const HomePage = () => {
   }, []);
 
   const handleEventClick = (id, name) => {
-    console.log(`event id: ${id} ${name}`);
+    setFocalEvent([ id, name ]);
+    setView('rsvp');
   }
 
   const renderEvents = () => {
@@ -28,7 +32,14 @@ const HomePage = () => {
       return (
         <div className='events'></div>
       );
-    } else {
+    } else if (view === 'rsvp') {
+      return (
+        <span>
+          <RSVP id={focalEvent[0]} eventName={focalEvent[1]} />
+        </span>
+      );
+    }
+    else {
       return (
         <div className='events'>
           {events.map((event) => (

@@ -11,10 +11,6 @@ const NavBar = (props) => {
           onClick={() => setView('homepage')}>
           Home
         </span>
-        <span className={'rsvp'}
-          onClick={() => setView('rsvp')}>
-          RSVP
-        </span>
         <span className={'admin'}
           onClick={() => setView('admin')}>
           Add Event

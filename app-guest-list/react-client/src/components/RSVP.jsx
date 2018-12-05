@@ -11,6 +11,7 @@ const RSVP = (props) => {
   const [email, setEmail] = useState('');
   const [guests, setGuests] = useState();
   const [view, setView] = useState('presubmit');
+  const eventID = props.id;
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -31,7 +32,7 @@ const RSVP = (props) => {
       lastName: lastName,
       email: email,
       guests: guests,
-      // eventID: eventID
+      eventID: eventID
     })
       .then((response) => {
         console.log(response);
