@@ -55,7 +55,20 @@ app.post('/events', (req, res) => {
       }).select('id')
       .then((data) => {
         const id = data[0].id;
-        console.log(`inserted id was ${JSON.stringify(id)}`);
+        knex.schema.createTable(`event${id}`, (table) => {
+          table.increments('id');
+          table.string('firstName');
+          table.string('lastName');
+          table.string('email');
+          table.integer('guests');
+          table.timestamps();
+        })
+        .then(() => {
+          console.log('created events table');
+        })
+        .error((error) => {
+          console.error(error);
+        })
       })
     })
     .then(() => {
@@ -67,25 +80,25 @@ app.post('/events', (req, res) => {
 })
 
 app.post('/rsvps', (req, res) => {
-    // console.log(req);
-      // knex('events')
-      //   .insert({
-      //     name: req.body.name,
-      //     location: req.body.location,
-      //     date: req.body.date,
-      //     startTime: req.body.startTime,
-      //     endTime: req.body.endTime,
-      //     created_at: moment().format('LLLL'),
-      //     updated_at: moment().format('LLLL')
-      //   })
-      //   .then(() => {
-      //     res.status(200);
-      //   })
-      //   .catch((error) => {
-      //     res.status(500).json({
-      //       error
-      //     });
-      //   })
+  const data = req.body;
+
+  knex(`event${data.eventID}`)
+    .insert({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      guests: data.guests,
+      created_at: moment().format('LLLL'),
+      updated_at: moment().format('LLLL')
+    })
+    .then(() => {
+      res.status(200);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
+    })
 })
 
 module.exports = app;
