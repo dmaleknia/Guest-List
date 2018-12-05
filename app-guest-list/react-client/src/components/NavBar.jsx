@@ -8,7 +8,7 @@ const NavBar = (props) => {
     <div>
       <div className='nav'>
         <span className={'homepage'}
-          onClick={() => location.reload()}>
+          onClick={() => setView('homepage')}>
           Home
         </span>
         <span className={'admin'}
