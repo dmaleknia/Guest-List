@@ -41,8 +41,9 @@ const HomePage = () => {
     }
     else {
       return (
-        <div className='events'>
+        <div>
           <h1 id='eventsHeader'>Top Events</h1>
+          <div className='events'>
           {events.map((event) => (
             <a key={event.id} onClick={() => { handleEventClick(event.id, event.name) }}>
               <Event
@@ -54,6 +55,7 @@ const HomePage = () => {
               />
             </a>
           ))}
+          </div>
         </div>
       );
     }
