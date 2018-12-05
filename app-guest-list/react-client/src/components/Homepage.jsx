@@ -42,6 +42,7 @@ const HomePage = () => {
     else {
       return (
         <div className='events'>
+          <h1 id='eventsHeader'>Top Events</h1>
           {events.map((event) => (
             <a key={event.id} onClick={() => { handleEventClick(event.id, event.name) }}>
               <Event
@@ -61,7 +62,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1 id='eventsHeader'>Top Events</h1>
       {renderEvents()}
     </div>
   );
