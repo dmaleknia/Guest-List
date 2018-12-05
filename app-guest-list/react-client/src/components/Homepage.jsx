@@ -34,9 +34,9 @@ const HomePage = () => {
       );
     } else if (view === 'rsvp') {
       return (
-        <span>
+        <div id='rsvp'>
           <RSVP id={focalEvent[0]} eventName={focalEvent[1]} />
-        </span>
+        </div>
       );
     }
     else {
