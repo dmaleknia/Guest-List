@@ -4,7 +4,6 @@ import { useState } from 'react';
 import NavBar from './NavBar.jsx';
 import Admin from './Admin.jsx';
 import HomePage from './HomePage.jsx';
-import RSVP from './RSVP.jsx';
 
 const App = () => {
 
