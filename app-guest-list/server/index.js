@@ -63,6 +63,9 @@ app.post('/events', (req, res) => {
           table.integer('guests');
           table.timestamps();
         })
+        .then((data) => {
+          return data;
+        })
         .error((error) => {
           console.error(error);
         })
