@@ -58,7 +58,7 @@ const RSVP = (props) => {
           Last Name: <input value={lastName} onChange={handleLastNameChange}></input><br />
           Email: <input value={email} onChange={handleEmailChange}></input><br />
           Guests: <NumericInput min={0} max={4} value={guests} onChange={setGuests} /><br />
-          <button id='submitRSVP' onClick={submitRSVP}>Submit RSVP</button>
+          <a className='submitRSVP' onClick={submitRSVP}><span>Submit RSVP</span></a>
         </span>
       );
     }

@@ -176,13 +176,29 @@ h1 {
   margin: 15px;
 }
 
-#submitEvent {
+.submitEvent {
   margin: 10px;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin-right: 10px;
 }
 
+.submitEvent * {
+  font-size: 20px;
+}
+
+.submitEvent *:hover {
+  color: red;
+}
+
 .events *:hover {
   color: yellow;
+}
+
+.submitRSVP *:hover {
+  color: red;
+}
+
+.submitRSVP * {
+  font-size: 20px;
 }

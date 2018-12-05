@@ -93,7 +93,7 @@ const Admin = () => {
               timeCaption="Time"
             />
           </section>
-          <button id='submitEvent' onClick={submitEvent}>Submit Event</button>
+          <a className='submitEvent' onClick={submitEvent}><span>Submit Event</span></a>
         </span>
       );
     }
