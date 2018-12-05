@@ -13,7 +13,6 @@ const Admin = () => {
   const [endTime, setEndTime] = useState(new Date);
   const [view, setView] = useState('presubmit');
 
-
   const handleNameChange = (event) => {
     setName(event.target.value);
   }
